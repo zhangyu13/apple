@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>响应式</title>
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_779204_zgjmxbib8w.css">
+	<script src="jquery-3.3.1.js"></script>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	i{
+		font-style: normal;
+	}
+	.top{
+			width: 100%;
+			height: 40px;
+			background-color: #444444;
+			padding-right: 25px;
+			font-size:14px;
+			line-height: 40px;
+			text-align: right;
+			color: #A8A8AA;
+		}
+
+		header{
+			width:100%;
+			height: 44px;
+			background-color: #333;
+			padding-left: 158px;
+			padding-right: 158px;
+			display: flex;
+			justify-content: space-between;
+
+		}
+
+		header .list{
+			display: none;
+		}
+		header .list i{
+			font-size: 16px;
+			color: white;
+		}
+		header a{
+			font-size: 24px;
+			color: #fff;
+			line-height: 44px;
+			text-decoration: none;
+			text-align: center;
+		}
+		header .text{
+			font-size: 16px;
+			color: white;
+		}
+		header .text i{
+			font-size: 16px;
+			color: white;
+		}
+	.iphoneX{
+		width: 100%;
+		height: 538px;
+		background: #fafafa;
+		background-image: url('https://www.apple.com/v/home/ds/images/heroes/iphone-x/iphone_x_large.jpg');
+		background-repeat:no-repeat;
+		background-position:  center bottom;
+		text-align: center;
+	    margin-bottom: 10px;
+	}
+	.iphoneX h2{
+		font-size: 44px;
+		padding-top: 30px;
+	}
+	.iphoneX h3{
+		display: block;
+		width: 100%;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		font-size: 24px;
+	    font-weight: 400;
+	}
+	.iphoneX a{
+		margin: 0 10px;
+		color:#0070c9;
+		font-size: 19px;
+		font-weight: 400;
+	}
+	.ipad{
+		width: 100%;
+		height: 538px;
+		background: #fafafa;
+		background-image: url('https://www.apple.com/cn/home/images/heroes/ipad_large.jpg');
+		background-repeat:no-repeat;
+		background-position:  center bottom;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.ipad h2{
+		font-size: 44px;
+		padding-top: 30px;
+	}
+	.ipad h3{
+		display: block;
+		width: 100%;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		font-size: 24px;
+	    font-weight: 400;
+	}
+	.ipad a{
+		margin: 0 10px;
+		color:#0070c9;
+		font-size: 19px;
+		font-weight: 400;
+	}
+	.pro{
+		width: 100%;
+		height: 538px;
+		background: #000;
+		background-image: url('https://www.apple.com/cn/home/images/heroes/macbook-pro/macbook_pro_performance_large.jpg');
+		background-repeat:no-repeat;
+		background-position:  center bottom;
+		text-align: center;
+	}
+	.pro h2{
+		font-size: 44px;
+		padding-top: 30px;
+		color: #fff;
+	}
+	.pro h3{
+		display: block;
+		width: 100%;
+		color: #fff;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		font-size: 24px;
+	    font-weight: 400;
+	}
+	.pro a{
+		margin: 0 10px;
+		color:#fff;
+		font-size: 19px;
+		font-weight: 400;
+    }
+	.list ul li{
+		width: 50%;
+		height: 598px;
+		background: green;
+		border: 12px solid #fff;
+		float: left;
+	}
+	.list ul li a{
+		color: #000;
+	}
+	.list ul li:nth-child(2) a{
+		color: #fff;
+	}
+	.list ul li:nth-child(3) a{
+		color: #fff;
+	}
+	.list ul li:nth-child(6) a{
+		color: #fff;
+	}
+	.list ul li:nth-child(2) h4{
+		margin-top: 410px;
+	}
+	.list ul li:nth-child(3) h4{
+		margin-top: 410px;
+	}
+	.list ul li:nth-child(6) h4{
+		margin-top: 410px;
+	}
+	.list ul li h4{
+		width: 100%;
+		display: block;
+		text-align: center;
+		font-size: 40px;
+		margin-top: 42px;
+	}
+	.list ul li h5{
+		width: 100%;
+		display: block;
+		text-align: center;
+		font-size: 21px;
+		font-weight: 400;
+	}
+	.list ul li:nth-child(2n+1){
+		border-right: 0;
+	}
+	.list ul li:nth-child(3){
+		border-bottom: 0;
+		border-top: 0;
+	}
+	.list ul li:nth-child(4){
+		border-bottom: 0;
+		border-top: 0;
+	}
+	.list ul li:nth-child(1){
+		background-image: url('https://www.apple.com/cn/home/images/promos/shop_for_college_large.jpg');
+		background-repeat: no-repeat;
+		background-position:  center bottom;
+	} 
+	.list ul li:nth-child(2){
+		background-image: url('https://www.apple.com/v/home/ds/images/promos/behind_the_mac_peter_large.jpg');
+		background-repeat: no-repeat;
+		background-position:  center bottom;
+	}
+	.list ul li:nth-child(3){
+		background-image: url('https://www.apple.com/cn/home/images/promos/iphone_x_a11_large.jpg');
+		background-repeat: no-repeat;
+		background-position:  center bottom;
+		background-size: cover;
+	}
+	.list ul li:nth-child(4){
+		background: #f9f0eb;
+		background-image: url('https://www.apple.com/v/home/ds/images/promos/iphone_8_large.jpg');
+		background-repeat: no-repeat;
+		background-position:  center bottom;
+	}
+	.list ul li:nth-child(5){
+		background: #fafafa;
+		background-image: url('https://www.apple.com/cn/home/images/half-width-promos/trade_up_large.jpg');
+		background-repeat: no-repeat;
+		background-position:  center bottom;
+	}
+	.list ul li:nth-child(6){
+		background: #000;
+		background-image: url('https://www.apple.com/cn/home/images/promos/three_rings_large.jpg');
+		background-repeat: no-repeat;
+		background-position:  center bottom;
+	}
+	footer{
+		width: 100%;
+		height: 422.7px;
+		padding: 0 95.5px;
+		background-color: #F2F2F2;
+	}
+	footer .list{
+		width: 100%;
+		height: 316.77px;
+		padding: 0 22px;
+		background-color: #F2F2F2;
+	}
+	footer .list dl{
+		width: 20%;
+		float: left;
+	}
+	footer .list dl dt{
+		font-size: 12px;
+		font-weight: bold;
+		position: relative;
+		margin-top: 10px;
+	}
+	footer .list dl dt i{
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+	}
+	footer .list dl dt i{
+		display: none;
+	}
+	footer .list dl dd{
+		font-size: 12px;
+		margin-top: 10px;
+	}
+	footer .list dl .shang{
+		margin-top: 30px;
+	}
+	.ac{
+		width: 100%;
+		/* height: 111px; */
+		padding: 34px 117.5px 0 117.5px;
+		display: flex;
+		flex-direction: column;
+	}
+	.ac .ac-a{
+		width: 100%;
+		height: 24px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #999;
+		margin-bottom: 7px;
+	}
+	.ac .ac-a p{
+		font-size: 12px;
+	}
+	.ac .ac-a p a{
+		color: blue;
+	}
+	.ac .ac-b{
+		width: 100%;
+		height: 25px;
+	}
+	.ac .ac-b pre{
+		font-size: 12px;
+		float: left;
+	}
+	.ac .ac-b p{
+		float: right;
+		font-size: 12px;
+	}
+	.ac .ac-b .china{
+		width: 16px;
+		height: 16px;
+		margin-right: 5px;
+		float: right;
+	}
+	.ac .ac-c{
+		width: 100%;
+		height: 15px;
+		margin-bottom: 20px;
+		font-size: 12px;
+		color: #999;
+	}
+	.xiala{
+			display: none;
+		}
+		.ll{
+			display: none;
+		}
+    @media screen and (max-width: 1200px){
+
+    }
+    @media screen and (max-width: 992px){
+    	header{
+				padding-right: 18px;
+				padding-left: 18px;
+				background-color: #000;
+			}
+			header a.list{
+				display: inline;
+
+			}
+			header a.text{
+				display: none;
+			}
+    	.iphoneX{
+    		background-image: url('https://www.apple.com/v/home/ds/images/heroes/iphone-x/iphone_x_medium.jpg');
+    	}
+    	.ipad{
+    		background-image: url('https://www.apple.com/cn/home/images/heroes/ipad_mediumtall.jpg');
+    	}
+    	.pro{
+    		background-image: url('https://www.apple.com/cn/home/images/heroes/macbook-pro/macbook_pro_performance_mediumtall.jpg');
+    	}
+    	.list ul li{
+    		height: 508px;
+    	}
+    	.list ul li:nth-child(1){
+		    background-image: url('https://www.apple.com/cn/home/images/promos/shop_for_college_medium.jpg');
+	    } 
+	    .list ul li:nth-child(2){
+	    	background-image: url('https://www.apple.com/v/home/ds/images/promos/behind_the_mac_phoebe_medium.jpg');
+	    }
+	    .list ul li:nth-child(3){
+	    	background-image: url('https://www.apple.com/cn/home/images/promos/iphone_x_a11_medium.jpg');
+	    }
+	    .list ul li:nth-child(4){
+	    	background-image: url('https://www.apple.com/v/home/ds/images/promos/iphone_8_medium.jpg');
+	    }
+	    .list ul li:nth-child(5){
+	    	background-image: url('https://www.apple.com/cn/home/images/half-width-promos/trade_up_medium.jpg');
+	    }
+	    .list ul li:nth-child(6){
+	    	background-image: url('https://www.apple.com/cn/home/images/promos/three_rings_medium.jpg');
+	    }
+	    .xiala{
+				width: 100%;
+				height: calc(100% - 44px);
+				background-color: black;
+				position: absolute;
+				top: 84px;
+				left: 0;
+				display: none;
+
+				/* position: relative; */
+			}
+			.xiala .search{
+				width: 100%;
+				height: 53px;
+				padding-left: 150px;
+				border-bottom: 1px solid #282828;
+			}
+			.xiala i{
+				font-size: 20px;
+				color:#757575;
+				position: absolute;
+				left: 155px; 
+				top: 13px;
+			}
+			.xiala .search input{
+				width: calc(100% - 170px);
+				height: 43px;
+				border-radius: 10px;
+				border: 0;
+				outline: none;
+				background-color: #282828;
+				margin-bottom: 10px;
+				padding-left: 30px;
+				color: white;
+				font-size: 14px;
+			}
+			.xiala a{
+				display: block;
+				width: calc(100% - 170px);
+				height: 44px;
+				font-size: 17px;
+				color: white;
+				line-height: 44px;
+				font-weight: 400;
+				border-top: 1px solid #282828;
+			}
+			.xiala a:nth-of-type(1){
+				border-top: 0;
+			}
+			.ll{
+				width: 100%;
+				/* height: 264px; */
+				background-color: white;
+				padding: 10px 10px;
+				display: none;
+			}
+			.ll a{
+				display: block;
+				width: 100%;
+				height: 27px;
+				padding: 6px 14px;
+				font-size: 1em;
+				color: #666;
+				line-height: 27px;
+			}
+    }
+    @media screen and (max-width: 768px){
+    	header a.list{
+    		display: inline;
+    	}
+    	header a.text{
+    		display: none;
+    	}
+    	.box a.text{
+    		width: 100%;
+    		height: 44px;
+		    text-align: center;
+		    line-height: 44px;
+		    border-bottom: 1px solid #888;
+    		display: none;
+    		position: absolute;
+    		top: 44px;
+    		left: 0;
+    	}
+    	header a.apple{
+    		display: none;
+    	}
+    	.iphoneX{
+    		background-image: url('https://www.apple.com/v/home/ds/images/heroes/iphone-x/iphone_x_small.jpg');
+    	}
+    	.ipad{
+    		background-image: url('https://www.apple.com/cn/home/images/heroes/ipad_small.jpg');
+    	}
+    	.pro{
+    		background-image: url('https://www.apple.com/cn/home/images/heroes/macbook-pro/macbook_pro_performance_small.jpg');
+    	}
+    	.list ul li{
+    		width: 100%;
+    		height: 524px;
+    		border: 0;
+    	}
+    	.list ul li:nth-child(1){
+		    background-image: url('https://www.apple.com/cn/home/images/promos/shop_for_college_small.jpg');
+		    border-top: 12px solid #fff;
+	    } 
+	    .list ul li:nth-child(2){
+	    	background-image: url('https://www.apple.com/v/home/ds/images/promos/behind_the_mac_boniface_small.jpg');
+	    	border-top: 12px solid #fff;
+	    }
+	    .list ul li:nth-child(3){
+	    	background-image: url('https://www.apple.com/cn/home/images/promos/iphone_x_a11_small.jpg');
+	    	border-top: 12px solid #fff;
+	    }
+	    .list ul li:nth-child(4){
+	    	background-image: url('https://www.apple.com/v/home/ds/images/promos/iphone_8_small.jpg');
+	    	border-top: 12px solid #fff;
+	    }
+	    .list ul li:nth-child(5){
+	    	background-image: url('https://www.apple.com/cn/home/images/half-width-promos/trade_up_small.jpg');
+	    	border-top: 12px solid #fff;
+	    }
+	    .list ul li:nth-child(6){
+	    	background-image: url('https://www.apple.com/cn/home/images/promos/three_rings_small.jpg');
+	    	border-top: 12px solid #fff;
+	    	border-bottom: 12px solid #fff;
+	    }
+	    footer{
+			width: 100%;
+			height: 418px;
+			padding: 0 16px;
+		}
+		footer .list{
+			padding: 0;
+		}
+		footer .list dl{
+			width: 100%;
+		}
+		footer .list dl .shang {
+			margin-top: 10px;
+		}v
+		footer .list dl dt{
+			border-bottom:1px solid #999; 
+			padding: 10px 0;
+		}
+		footer .list dl dt i{
+			display: block;
+		}
+		footer .list dl dd{
+			display: none;
+		}
+		.ac{
+			padding: 17px 16px 19px 16px;
+		}
+		.ac .ac-a{
+			border: 0;
+		}
+		}
+	</style>
+</head>
+<body>
+<!-- 普通手机、小小屏：小于768px;
+     pad/小屏：768px-992px;
+     普通桌面显示器 -->
+    <div class="top">
+		<广告>
+	</div>
+	<header>
+		<a href="javascript:;" class="list"><i class="iconfont icon-shouqi"></i></a>
+		<a href=""><i class="iconfont icon-pingguologo"></i></a>
+		<a href="" class="text">Mac</a>
+		<a href="" class="text">ipad</a>
+		<a href="" class="text">iphone</a>
+		<a href="" class="text">Watch</a>
+		<a href="" class="text">Music</a>
+		<a href="" class="text">技术支持</a>
+		<a href="" class="text"><i class="iconfont icon-sousuo1"></i></a>
+		<a href=""><i class="iconfont icon-daizi-"></i></a>
+	</header>
+     <div class="iphoneX">
+     	<h2>iphoneX</h2>
+     	<h3>哈喽，未来</h3>
+     	<a href="">进一步了解&gt;</a><a href="">购买&gt;</a>
+     </div>
+     <div class="ipad">
+     	<h2>iPad</h2>
+     	<h3>这个电脑，拿掉了电脑的条条框框</h3>
+     	<a href="">进一步了解&gt;</a><a href="">购买&gt;</a>
+     </div><div class="pro">
+     	<h2>MacBook Pro</h2>
+     	<h3>更强劲，更专业的强劲。</h3>
+     	<a href="">进一步了解&gt;</a><a href="">购买&gt;</a>
+     </div>
+     <div class="list">
+     	<ul>
+     		<li>
+     			<a href=""><h4>暑期热点呈现</h4><h5>为高校生活购买Mac或iPad Pro，Beats耳机搭<br>配其中。</h5></a>
+     		</li>
+     		<li>
+     			<a href=""><h4>暑期热点呈现</h4><h5>为高校生活购买Mac或iPad Pro，Beats耳机搭<br>配其中。</h5></a>
+     		</li>
+     		<li>
+     			<a href=""><h4>暑期热点呈现</h4><h5>为高校生活购买Mac或iPad Pro，Beats耳机搭<br>配其中。</h5></a>
+     		</li>
+     		<li>
+     			<a href=""><h4>暑期热点呈现</h4><h5>为高校生活购买Mac或iPad Pro，Beats耳机搭<br>配其中。</h5></a>
+     		</li>
+     		<li>
+     			<a href=""><h4>暑期热点呈现</h4><h5>为高校生活购买Mac或iPad Pro，Beats耳机搭<br>配其中。</h5></a>
+     		</li>
+     		<li>
+     			<a href=""><h4>暑期热点呈现</h4><h5>为高校生活购买Mac或iPad Pro，Beats耳机搭<br>配其中。</h5></a>
+     		</li>
+     	</ul>
+     </div>
+     <footer>
+        <div class="list">
+			<dl>
+				<dt>选购及了解<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">Mac</a>
+					<a href="">ipad</a>
+					<a href="">iphone</a>
+					<a href="">Watch</a>
+					<a href="">Music</a>
+					<a href="">iTunes</a>
+					<a href="">ipad touch</a>
+					<a href="">配件</a>
+					<a href="">App Store 充值卡</a>
+				</div>
+				<dd>Mac</dd>
+				<dd>ipad</dd>
+				<dd>iphone</dd>
+				<dd>Watch</dd>
+				<dd>Music</dd>
+				<dd>iTunes</dd>
+				<dd>ipad touch</dd>
+				<dd>配件</dd>
+				<dd>App Store 充值卡</dd>
+			</dl>
+			<dl>
+				<dt>Apple Store 商店<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">查找零售店</a>
+					<a href="">Genius Bar 天才吧</a>
+					<a href="">Today at Apple</a>
+					<a href="">Apple 夏令营</a>
+					<a href="">Fieid Trip 课外活动</a>
+					<a href="">Apple Store App</a>
+					<a href="">翻新和优惠</a>
+					<a href="">分期付款</a>
+					<a href="">Apple GiveBack 回馈计划</a>
+				</div>
+				<dd>查找零售店</dd>
+				<dd>Genius Bar 天才吧</dd>
+				<dd>Today at Apple</dd>
+				<dd>Apple 夏令营</dd>
+				<dd>Fieid Trip 课外活动</dd>
+				<dd>Apple Store App</dd>
+				<dd>翻新和优惠</dd>
+				<dd>分期付款</dd>
+				<dd>Apple GiveBack 回馈计划</dd>
+				<dd>订单状态</dd>
+				<dd>选购帮助</dd>
+			</dl>
+			<dl>
+				<dt>教育应用<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">Apple 与教育</a>
+					<a href="">高校师生选购</a>
+				</div>
+				<dd>Apple 与教育</dd>
+				<dd>高校师生选购</dd>
+				<dt class="shang">商务应用<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">Apple 与商务</a>
+					<a href="">商务选购</a>
+				</div>
+				<dd>Apple 与商务</dd>
+				<dd>商务选购</dd>
+			</dl>
+			<dl>
+				<dt>账户<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">管理你的 Apple ID</a>
+					<a href="">Apple Store 账户</a>
+					<a href="">icloud.com</a>
+				</div>
+				<dd>管理你的 Apple ID</dd>
+				<dd>Apple Store 账户</dd>
+				<dd>icloud.com</dd>
+				<dt class="shang">Apple价值<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">帮助功能</a>
+					<a href="">环境责任</a>
+					<a href="">隐私</a>
+					<a href="">供应商责任</a>
+				</div>
+				<dd>帮助功能</dd>
+				<dd>环境责任</dd>
+				<dd>隐私</dd>
+				<dd>供应商责任</dd>
+			</dl>
+			<dl>
+				<dt>关于Apple<i class="iconfont icon--jiahao"></i></dt>
+				<div class="ll">
+					<a href="">Newsroom</a>
+					<a href="">Apple 管理层</a>
+					<a href="">工作机会</a>
+					<a href="">创造就业</a>
+					<a href="">活动</a>
+					<a href="">联系 Apple</a>
+				</div>
+				<dd>Newsroom</dd>
+				<dd>Apple 管理层</dd>
+				<dd>工作机会</dd>
+				<dd>创造就业</dd>
+				<dd>活动</dd>
+				<dd>联系 Apple</dd>
+			</dl>
+		</div>
+	</footer>
+	<div class="ac">
+		<div class="ac-a">
+			<p>更多选购方式：前往<a href="">Apple Store 零售店</a>，致电400-666-8800或查找在你的附近的<a href="">授权经销商</a>.</p>
+		</div>
+		
+		<div class="ac-b">
+			<pre>Capyright &copy; 2018 Apple Inc.保留所有权利。&nbsp;&nbsp;&nbsp;&nbsp;<a href="">隐私政策</a>|<a href="">使用条款</a>|<a href="">销售政策</a>|<a href="">法律信息</a>|<a href="">网站地图</a>
+			</pre>
+			<p>中国</p><div class="china"><img src="img/16.png" alt="" width="16" height="16"></div>
+		</div>
+		<div class="ac-c">京公安网安备 11010502008968 京ICP备10214630</div>
+	</div>
+	<div class="xiala">
+		<div class="search">
+			<i class="iconfont icon-sousuo"></i>
+			<input type="text" placeholder="apple.com">
+			<a href="">Mac</a>
+			<a href="">ipad</a>
+			<a href="">iphone</a>
+			<a href="">Watch</a>
+			<a href="">Music</a>
+			<a href="">技术支持</a>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+    let list=$(".list");
+	let xiala=$(".xiala");
+	list.click(function(){
+		xiala.slideToggle("slow");
+	})
+
+
+	let jiahao=$(".list dt i");
+	let ll=$(".ll");
+	jiahao.eq(0).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(0).slideToggle("slow");
+	})
+	jiahao.eq(1).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(1).slideToggle("slow");
+	})
+	jiahao.eq(2).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(2).slideToggle("slow");
+	})
+	jiahao.eq(3).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(3).slideToggle("slow");
+	})
+	jiahao.eq(4).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(4).slideToggle("slow");
+	})
+	jiahao.eq(5).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(5).slideToggle("slow");
+	})
+	jiahao.eq(6).click(function(){
+		$(this).css("transform","rotate(45deg)");
+		ll.eq(6).slideToggle("slow");
+	})
+</script>
